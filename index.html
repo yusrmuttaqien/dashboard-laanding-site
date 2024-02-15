@@ -9,26 +9,40 @@
     <meta name="msapplication-TileImage" content="assets/img/apple-favicon.png" />
     <title>TODO | yusrmuttaqien</title>
   </head>
-  <body>
+  <body data-asid>
     <header>
-      <img src="assets/svg/logo.svg" alt="todo-logo" />
+      <svg viewBox="0 0 36 31">
+        <use href="assets/svg/logo.svg#logo"></use>
+      </svg>
       <nav>
         <ul>
           <li><a href="#why">Why?</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#count-me-in">Count me in</a></li>
+          <li><a href="#count-in">Count me in</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="with-separator">
+      <section class="with-separator" id="intro">
         <div>
           <h1>(Todo)</h1>
           <p>Your last and only needed, Todo app manager ✓</p>
         </div>
-        <img src="assets/img/main-app.png" alt="todo-app" />
+        <picture>
+          <source
+            media="(min-width: 1280px)"
+            srcset="assets/img/main-app-desktop.png"
+            type="image/png"
+          />
+          <source
+            media="(min-width: 744px)"
+            srcset="assets/img/main-app-tablet.png"
+            type="image/png"
+          />
+          <img src="assets/img/main-app-mobile.png" alt="todo-app" />
+        </picture>
       </section>
-      <section class="with-separator">
+      <section class="with-separator" id="why">
         <div>
           <h2>(Why?)</h2>
           <p>I have seen this kind of app before, why is this one any different 🤔</p>
@@ -52,29 +66,29 @@
           </figure>
         </div>
       </section>
-      <section class="with-separator">
+      <section class="with-separator" id="features">
         <div>
           <h2>(Features)</h2>
           <p>Embrace the power ⚡️ use it to your benefit</p>
         </div>
         <div>
-          <figure>
+          <figure id="feat-dtd">
             <img src="assets/img/delightful-ui-ux.png" alt="alts" />
             <figcaption>Detailed todo 🗒️</figcaption>
           </figure>
-          <figure>
+          <figure id="feat-prst">
             <img src="assets/img/delightful-ui-ux.png" alt="alts" />
             <figcaption>Persist 💾<sup>*</sup></figcaption>
           </figure>
-          <figure>
+          <figure id="feat-cht">
             <img src="assets/img/delightful-ui-ux.png" alt="alts" />
             <figcaption>Chat 💬<sup>**</sup></figcaption>
           </figure>
-          <figure>
+          <figure id="feat-pers">
             <img src="assets/img/delightful-ui-ux.png" alt="alts" />
             <figcaption>Personalize 💅</figcaption>
           </figure>
-          <figure>
+          <figure id="feat-trace">
             <img src="assets/img/delightful-ui-ux.png" alt="alts" />
             <figcaption>Trace your activity 🔍</figcaption>
           </figure>
@@ -84,17 +98,27 @@
           <dl>** Persist utilize Browser’s LocalStorage and SessionStorage features.</dl>
         </ul>
       </section>
-      <section>
+      <section id="count-in">
         <div>
           <h2>(Count me in)</h2>
           <p>Experience it first hand 👇</p>
         </div>
         <div>
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a
+            class="anim-tri-arrow"
+            href="https://dashboard-site-showoff.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span>Access live webapp</span>
             <span>>>></span>
           </a>
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a
+            class="anim-tri-arrow"
+            href="https://github.com/yusrmuttaqien/dashboard-site"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span>Access github repo</span>
             <span>>>></span>
           </a>
@@ -102,13 +126,11 @@
       </section>
 
       <aside>
+        <span id="aside-handler"></span>
         <article>
-          <div>
-            <img src="assets/img/profile.jpg" alt="yusril-muttaqien" />
-            <h2>(Who?)</h2>
-          </div>
-          <div>
-            <h3>Hi, Yusril here 👋</h3>
+          <img src="assets/img/profile.jpg" alt="yusril-muttaqien" />
+          <div id="detail">
+            <h2>(Yusril here)</h2>
             <p>
               Hi 👋, I'm a student majoring in Information Systems and currently re-learning
               Frontend in the web, utilizing HTML, CSS, JS/TS, and its frameworks to build scalable,
@@ -119,25 +141,48 @@
       </aside>
     </main>
     <footer>
-      <div>
+      <div id="info">
         <div id="product">
-          <img src="assets/svg/logo.svg" alt="todo-logo" />
+          <svg viewBox="0 0 36 31">
+            <use href="assets/svg/logo.svg#logo"></use>
+          </svg>
           <h2>(Todo)</h2>
         </div>
         <ul>
           <li>
-            <a href="http://" target="_blank" rel="noopener noreferrer"
-              ><span>LinkedIn</span><span>>>></span></a
+            <a
+              class="anim-tri-arrow"
+              href="https://www.linkedin.com/in/ydhm/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              <span>LinkedIn</span><span>>>></span>
+            </a>
           </li>
           <li>
-            <a href="http://" target="_blank" rel="noopener noreferrer"
-              ><span>Github</span><span>>>></span></a
+            <a
+              class="anim-tri-arrow"
+              href="https://github.com/yusrmuttaqien"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              <span>Github</span><span>>>></span>
+            </a>
           </li>
         </ul>
       </div>
       <p>@2024 yusrmuttaqien. All rights reserved.</p>
     </footer>
+
+    <script>
+      const body = document.querySelector('body');
+      const asideHandler = document.getElementById('aside-handler');
+
+      asideHandler.addEventListener('click', () => {
+        const isAsideOpen = body.dataset.aside !== undefined;
+
+        isAsideOpen ? body.removeAttribute('data-aside') : body.setAttribute('data-aside', '');
+      });
+    </script>
   </body>
 </html>
