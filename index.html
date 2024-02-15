@@ -189,9 +189,17 @@
       const asideHandler = document.getElementById('aside-handler');
 
       asideHandler.addEventListener('click', () => {
-        const isAsideOpen = body.dataset.aside !== undefined;
+        const windowWidth = window.innerWidth;
+        const bodyWidth = body.clientWidth;
 
-        isAsideOpen ? body.removeAttribute('data-aside') : body.setAttribute('data-aside', '');
+        const isAsideOpen = body.dataset.asidePrecise !== undefined;
+        const isPrecise = windowWidth === bodyWidth;
+
+        // NOTE: Untuk toggle aside open/close, melakukan pengecekan ekstra untuk menambah padding
+        // NOTE: guna mengeliminasi layout shift yang terjadi ketika aside dibuka/tutup
+        isAsideOpen
+          ? body.removeAttribute('data-aside-precise')
+          : body.setAttribute('data-aside-precise', isPrecise ? 'true' : 'false');
       });
     </script>
   </body>

@@ -68,11 +68,13 @@ main aside article img,
 body::-webkit-scrollbar-thumb {
   border-radius: 1rem;
 }
-body[data-aside] {
+body[data-aside-precise] {
   overflow: hidden;
+}
+body[data-aside-precise='false'] {
   padding-right: var(--scrollbar-dimension);
 }
-body[data-aside] main aside {
+body[data-aside-precise] main aside {
   translate: 0 0;
 }
 .anim-tri-arrow span:last-child {
@@ -345,6 +347,7 @@ main aside #aside-handler {
 main aside article {
   height: 100%;
   width: 100%;
+  min-width: calc(320px - (var(--_handle-dimension) / 2));
   padding: calc(var(--header-height) + 2rem) 1rem 2rem;
 
   overflow: auto;
@@ -647,6 +650,9 @@ footer > p {
   }
   main #count-in {
     padding-block: 4rem;
+  }
+  main aside article #detail h2 {
+    font-size: 2.38rem;
   }
   /* #endregion */
 
