@@ -13,7 +13,7 @@ html {
   --blur-pixel: 12px;
   --x-padding: 1rem;
   --header-height: 6.875rem;
-  --scrollbar-dimension: 0.5rem;
+  --scrollbar-dimension: 0.6875rem;
 }
 @font-face {
   font-family: 'Taruno Wide';
@@ -27,6 +27,8 @@ html {
 
   scroll-behavior: smooth;
   scroll-margin-top: calc(var(--header-height) + 1rem);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-base);
 }
 *::-webkit-scrollbar {
   width: var(--scrollbar-dimension);
@@ -118,11 +120,9 @@ header {
   backdrop-filter: blur(var(--blur-pixel));
   -webkit-backdrop-filter: blur(var(--blur-pixel));
 }
-header svg {
+header img {
   width: 2.25rem;
   height: auto;
-
-  color: var(--color-primary);
 }
 header nav {
   width: 100%;
@@ -401,11 +401,9 @@ footer #product h2 {
   color: var(--color-base);
   text-transform: uppercase;
 }
-footer #product svg {
+footer #product img {
   width: 4.75rem;
   height: auto;
-
-  color: var(--color-base);
 }
 footer #product h2::before {
   content: 'x';
@@ -661,7 +659,7 @@ footer > p {
     padding-top: 4rem;
     padding-bottom: 2rem;
   }
-  footer #product svg {
+  footer #product img {
     width: 6.5625rem;
   }
   /* #endregion */
