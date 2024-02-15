@@ -298,7 +298,7 @@ main aside {
   top: var(--header-height);
   right: 0;
   width: calc(100vw - (var(--_handle-dimension) / 2));
-  height: calc(100svh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
   translate: 100% 0;
 
   background-color: rgba(var(--color-base-rgb), 95%);
