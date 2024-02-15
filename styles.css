@@ -1,7 +1,4 @@
 /* #region GLOBAL */
-html {
-  background: #fff;
-}
 :root {
   --color-primary: #5d69f5;
   --color-base: #eaecff;
@@ -245,6 +242,8 @@ main #features figure figcaption {
   padding: 0.5rem;
   right: var(--_distance);
   top: var(--_distance);
+  width: max-content;
+  max-width: calc(100% - (var(--_distance) * 2));
 
   font-size: 0.625rem;
   border-radius: 0.375rem;
@@ -252,6 +251,11 @@ main #features figure figcaption {
   backdrop-filter: blur(var(--blur-pixel));
   -webkit-backdrop-filter: blur(var(--blur-pixel));
   color: rgb(var(--color-black-rgh), 70%);
+  transition: opacity 0.3s ease-in-out;
+}
+main #features figure:hover figcaption {
+  opacity: 0;
+  pointer-events: none;
 }
 main #features #feat-dtd {
   grid-area: dtd;
@@ -639,9 +643,6 @@ footer > p {
   }
   main #features figure figcaption {
     font-size: 1rem;
-  }
-  main #features #feat-trace figcaption {
-    left: var(--_distance);
   }
   main #features ul dl {
     font-size: 1rem;
