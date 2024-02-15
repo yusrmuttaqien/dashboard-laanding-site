@@ -232,7 +232,8 @@ main #features figure {
   min-height: 12.5rem;
   border: 0.375rem solid var(--color-white);
 }
-main #features figure img {
+main #features figure img,
+main #features figure video {
   height: 100%;
 
   object-fit: cover;
@@ -245,7 +246,7 @@ main #features figure figcaption {
 
   font-size: 0.625rem;
   border-radius: 0.375rem;
-  background-color: rgba(var(--color-base-rgb), 10%);
+  background-color: rgba(var(--color-base-rgb), 50%);
   backdrop-filter: blur(var(--blur-pixel));
   -webkit-backdrop-filter: blur(var(--blur-pixel));
   color: rgb(var(--color-black-rgh), 70%);
