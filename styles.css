@@ -295,17 +295,19 @@ main aside {
   --_handle-dimension: 4.75rem;
 
   position: fixed;
-  top: var(--header-height);
+  top: 0;
   right: 0;
   width: calc(100vw - (var(--_handle-dimension) / 2));
-  height: calc(100dvh - var(--header-height));
+  height: 100dvh;
   translate: 100% 0;
 
   background-color: rgba(var(--color-base-rgb), 95%);
   border-left: 0.0625rem solid var(--color-primary);
   backdrop-filter: blur(var(--blur-pixel));
   -webkit-backdrop-filter: blur(var(--blur-pixel));
-  transition: translate 0.3s ease-in-out;
+  transition-property: translate, height;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
   overflow: visible;
 }
 main aside #aside-handler {
@@ -325,12 +327,12 @@ main aside #aside-handler {
 main aside article {
   height: 100%;
   width: 100%;
-  padding: 2rem 1rem;
+  padding: calc(var(--header-height) + 2rem) 1rem 2rem;
 
   overflow: auto;
 }
 main aside article img {
-  width: 10.5rem;
+  width: 100%;
   margin-bottom: 1.75rem;
 }
 main aside article #detail h2 {
