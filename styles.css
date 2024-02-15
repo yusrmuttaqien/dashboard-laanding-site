@@ -1,0 +1,26 @@
+/* GLOBAL */
+:root {
+  --color-primary: #5d69f5;
+  --color-base: #eaecff;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+/* MAIN */
+main section.with-separator::after {
+  content: '***';
+  color: blue;
+}
+
+/* FOOTER */
+footer #product h2::before {
+  content: 'x';
+}
