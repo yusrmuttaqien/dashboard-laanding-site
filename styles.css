@@ -517,10 +517,10 @@ footer > p {
     font-size: 1.125rem;
   }
   main #features > div:last-of-type {
-    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-      'dtd dtd trace'
-      'pers pers trace'
+      'dtd dtd dtd'
+      'pers pers pers'
+      'trace trace trace'
       'prst cht cht';
     gap: 1rem;
   }
@@ -636,9 +636,10 @@ footer > p {
     font-size: 1.25rem;
   }
   main #features > div:last-of-type {
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-      'dtd dtd trace'
-      'prst pers trace'
+      'dtd dtd dtd'
+      'pers pers trace'
       'prst cht cht';
   }
   main #features figure figcaption {
